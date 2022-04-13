@@ -4,12 +4,15 @@ import java.util.Scanner;
 
 public class SanhCuoi{
     private String tenSanh;
-//    private String idSanh;
+    private String idSanh;
     private static int dem = 0;
-    private int idSanh = ++dem;
     private String viTri;
     private int sucChua;
     final Scanner s = new Scanner(System.in);
+
+    {
+        idSanh = "S" + String.format("%05d", ++dem);
+    }
 
     public SanhCuoi(String tenS, String vt, int nguoiChua){
         this.tenSanh = tenS;
@@ -30,7 +33,7 @@ public class SanhCuoi{
     }
 
     public void xuatSanh(){
-        System.out.printf("Mã Sảnh: %05d\n", this.idSanh);
+        System.out.printf("Mã Sảnh: %s\n", this.idSanh);
         System.out.printf("Tên Sảnh: %s\n", this.tenSanh);
         System.out.printf("Vị Trí Sảnh: %s\n", this.viTri);
         System.out.printf("Sức chứa: %d\n", this.sucChua);
@@ -52,11 +55,11 @@ public class SanhCuoi{
         this.tenSanh = tenSanh;
     }
 
-    public int getIdSanh() {
+    public String getIdSanh() {
         return idSanh;
     }
 
-    public void setIdSanh(int idSanh) {
+    public void setIdSanh(String idSanh) {
         this.idSanh = idSanh;
     }
 

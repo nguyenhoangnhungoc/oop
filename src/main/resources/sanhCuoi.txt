@@ -1,35 +1,35 @@
 Sanh tret thường 1
-1
+Tret Khu A
 500
 Sanh tret thường 2
-1
+Tret Khu A
 500
 Sanh tret thường 3
-1
+Tret Khu A
 500
 Sanh tret VIP 1
-2
+Tret Khu B
 1000
 Sanh tret VIP 2
-2
+Tret Khu B
 1500
 Sanh tang deluxe 1
-3
+Tang 1 Khu A
 500
 Sanh tang deluxe 2
-3
+Tang 1 Khu A
 1000
 Sanh tang deluxe 3
-3
+Tang 1 Khu B
 1500
 Sanh private 1
-4
+Tang 2 Khu A
 100
 Sanh private 2
-4
+Tang 2 Khu A
 300
 Sanh private 3
-4
+Tang 2 Khu A
 500
 
 
