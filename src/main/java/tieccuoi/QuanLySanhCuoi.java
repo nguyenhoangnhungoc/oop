@@ -19,15 +19,14 @@ public class QuanLySanhCuoi {
         this.ds.forEach(s -> s.xuatSanh());
     }
 
-    public void docDsSanh() throws FileNotFoundException, ParseException{
-//            File f = new File("src/main/resource/sanhCuoi.txt");
-            try (Scanner scanner = new Scanner("src/main/resource/sanhCuoi.txt")) {
-                while (scanner.hasNext()){
+    public void docDsSanh() throws FileNotFoundException{
+            File f = new File("D:\\OOP\\BTL_OOP\\oop\\src\\main\\resources\\sanhCuoi.txt");
+            try (Scanner scanner = new Scanner(f)) {
+                while (scanner.hasNextLine()){
                     String tenS = scanner.nextLine();
-                    String viTri = scanner.nextLine();
-                    int nguoiChua = scanner.nextInt();
-
-                    SanhCuoi s = new SanhCuoi(tenS, viTri, nguoiChua);
+                    String vt = scanner.nextLine();
+                    int nguoiChua = Integer.valueOf(scanner.nextLine()) ;
+                    SanhCuoi s = new SanhCuoi(tenS, vt, nguoiChua);
                     this.ds.add(s);
                 }
             }

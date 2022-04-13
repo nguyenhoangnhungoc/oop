@@ -31,5 +31,3 @@ Tang 2 Khu A
 Sanh private 3
 Tang 2 Khu A
 500
-
-

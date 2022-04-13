@@ -5,7 +5,7 @@ import java.text.ParseException;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws FileNotFoundException, ParseException {
         SanhCuoi s1 = new SanhCuoi("Sanh 1", "Tret Khu A", 500);
         SanhCuoi s2 = new SanhCuoi("Sanh 2", "Tret Khu B", 1000);
         SanhCuoi s3 = new SanhCuoi();
@@ -19,12 +19,12 @@ public class Main {
 
         System.out.println("DANH SACH SANH CUOI");
 //        ql.docDsSanh("src/main/resource/sanhCuoi.txt");
-//        ql.docDsSanh();
+        ql.docDsSanh();
         ql.xuatSanh();
 
 
         System.out.println("DANH SACH TIM KIEM");
-        List<SanhCuoi> kq = ql.timKiem("2");
+        List<SanhCuoi> kq = ql.timKiem("Khu B");
         kq.forEach(s -> s.xuatSanh());
 
         ThucPham f1 = new ThucPham("Pasta", "75000",false);
