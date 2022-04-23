@@ -1,0 +1,20 @@
+Trang trí không gian sảnh ngoài thường
+5000000
+Trang trí không gian sảnh ngoài VIP
+10000000
+Trang trí không gian sảnh ngoài Deluxe
+15000000
+Trang trí không gian sảnh ngoài Private
+10000000
+Trang trí không gian sảnh trong thường
+20000000
+Trang trí không gian sảnh trong VIP
+40000000
+Trang trí không gian sảnh trong Deluxe
+50000000
+Trang trí không gian sảnh trong Private
+20000000
+Nghệ sĩ Piano
+2000000
+Nghệ sĩ violin
+2000000

@@ -24,11 +24,11 @@ public class SanhCuoi{
     }
 
     public void nhapSanh(){
-        System.out.printf("Nhap ten sanh: ");
+        System.out.printf("Nhập tên sảnh: ");
         this.tenSanh = s.nextLine();
-        System.out.printf("Vi tri sanh: ");
+        System.out.printf("Nhập vị trí sảnh: ");
         this.viTri = s.nextLine();
-        System.out.printf("Suc chua cua sanh: ");
+        System.out.printf("Nhập sức chứa: ");
         this.sucChua = s.nextInt();
     }
 

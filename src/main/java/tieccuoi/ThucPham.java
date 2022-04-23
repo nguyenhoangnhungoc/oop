@@ -1,39 +1,35 @@
 package tieccuoi;
 
-public class ThucPham {
+import java.util.Scanner;
+
+public abstract class ThucPham {
     private static int dem = 0;
     private String idTp ;
     private String tenTp;
     private String giaTp;
-    private boolean isChay;
+    final Scanner s = new Scanner(System.in);
+
 
     {
-       idTp = "F" + String.format("%05d", ++dem);
+        idTp = "F" + String.format("%05d", ++dem);
     }
 
-    public ThucPham(String tenF, String giaF, boolean chay){
-        this.tenTp = tenF;
-        this.giaTp = giaF;
-        this.isChay = chay;
-    }
-
-    public ThucPham(){
+    public ThucPham(String tenTp, String giaTp){
+        this.tenTp = tenTp;
+        this.giaTp = giaTp;
     }
 
     public void xuatTp(){
         System.out.printf("Mã Món: %s\n", this.idTp);
         System.out.printf("Tên Món: %s\n", this.tenTp);
         System.out.printf("Giá món: %s\n", this.giaTp);
-        System.out.printf("Món chay: %s\n", this.isChay);
     }
 
-
-    public boolean isIsChay() {
-        return isChay;
-    }
-
-    public void setIsChay(boolean isChay) {
-        this.isChay = isChay;
+    public void nhapTp(){
+        System.out.println("Nhập tên thực phẩm: ");
+        this.tenTp = s.nextLine();
+        System.out.println("Nhập giá thực phẩm: ");
+        this.giaTp = s.nextLine();
     }
 
     public String getIdTp() {

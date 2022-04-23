@@ -1,11 +1,34 @@
 package tieccuoi;
 
+import java.util.Scanner;
+
 public class DichVu {
+    private static int dem=0;
     private String idDv;
     private String tenDv;
     private String giaDv;
+    final Scanner s = new Scanner(System.in);
 
-    public DichVu(){
+    {
+        idDv = String.format("%05d", ++dem);
+    }
+
+    public DichVu(String tenDv, String giaDv) {
+        this.tenDv = tenDv;
+        this.giaDv = giaDv;
+    }
+
+    public void xuatDv(){
+        System.out.printf("Mã dịch vụ: %s\n", this.idDv);
+        System.out.printf("Tên dịch vụ: %s\n", this.tenDv);
+        System.out.printf("Giá dịch vụ: %s\n", this.giaDv);
+    }
+
+    public void nhapDv(){
+        System.out.println("Nhập tên thực phẩm: ");
+        this.tenDv = s.nextLine();
+        System.out.println("Nhập giá thực phẩm: ");
+        this.giaDv = s.nextLine();
     }
 
     public String getIdDv() {

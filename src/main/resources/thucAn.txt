@@ -1,0 +1,18 @@
+Mỳ ý sốt kem thịt nguội
+75000
+false
+Pudding trứng
+25000
+true
+Salad thịt gà
+65000
+false
+Salad sốt sữa chua
+50000
+true
+Mỳ ý bò bằm
+75000
+false
+Bánh sừng bò
+20000
+true

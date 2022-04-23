@@ -1,0 +1,21 @@
+Nước ngọt có ga Coca Cola
+30000
+Công ty Coca Cola
+Nước ngọt có ga Pepsi
+30000
+Công ty Pepsi
+Bia Sài Gòn
+35000
+Công ty Trách nhiệm hữu hạn Bia Sài Gòn
+Nước ngọt có ga Fanta
+30000
+Công ty Coca Cola
+Bia Tiger
+40000
+Công ty Bia Tiger
+Bia Heineken
+40000
+Công ty Trách nhiệm hữu hạn Bia Heineken
+Nước lọc Dasani
+25000
+Công ty Coca Cola
