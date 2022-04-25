@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class QuanLyThucPham {
     private List<ThucPham> ds = new ArrayList<>();
+    final Scanner s = new Scanner(System.in);
     private double donGiaMenu;
 
     public void themThucPham(ThucPham tp) {
@@ -62,9 +63,12 @@ public class QuanLyThucPham {
                 System.out.printf("Không tìm thấy thực phẩm %s để xóa\n", tenThucPham);
     }
 
-    public List<ThucPham> timKiem(String tuKhoa) {
+    public List<ThucPham> timKiem() {
         List<ThucPham> kq = new ArrayList<>();
+        String tuKhoa;
 
+        System.out.printf("Nhập tên thực phẩm: ");
+        tuKhoa = s.next();
         for (ThucPham tp : this.ds)
             if (tp.getTenTp().contains(tuKhoa) || tp.getGiaTp().contains(tuKhoa))
                 kq.add(tp);

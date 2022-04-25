@@ -13,8 +13,8 @@ public class QuanLySanhCuoi {
         this.ds.add(s);
     }
 
-    public void xuatSanh() {
-        this.ds.forEach(s -> s.xuatSanh());
+    public void xuatSanh(List<SanhCuoi> sanhCuois) {
+        sanhCuois.forEach(s -> s.xuatSanh());
     }
 
     public void docDsSanh() throws FileNotFoundException {
@@ -38,13 +38,16 @@ public class QuanLySanhCuoi {
 
         System.out.println("Nhập tên sảnh xoá: ");
         tenSanhXoa = scanner.nextLine();
-        for (SanhCuoi s : this.ds)
+        Boolean isDeleted = false;
+        for (SanhCuoi s : this.ds) {
             if (s.getTenSanh().contains(tenSanhXoa) == true) {
                 this.ds.remove(s);
                 System.out.println("Xóa thành công!");
-                break;
-            } else
-                System.out.printf("Không tìm thấy sảnh %s để xóa\n", tenSanhXoa);
+                isDeleted = true;
+            }
+        }
+        if (!isDeleted)
+            System.out.printf("Không tìm thấy sảnh %s để xóa\n", tenSanhXoa);
     }
 
     public void capNhat() throws IOException {
@@ -76,20 +79,6 @@ public class QuanLySanhCuoi {
         if (kq.size() == 0)
             System.out.println("Không tìm thấy sảnh " + tuKhoa);
         return kq;
-    }
-
-    public List<SanhCuoi> traCuuSanh(){
-        List<SanhCuoi> traCuu = new ArrayList<>();
-        String tuKhoa = new String();
-
-        System.out.println("Nhâp tên sảnh hoặc vị trí hoặc sức chứa: ");
-        tuKhoa = scanner.nextLine();
-        for(SanhCuoi s : this.ds){
-            if(s.getTenSanh().contains(tuKhoa) || s.getViTri().contains(tuKhoa) || String.valueOf(s.getSucChua()).contains(tuKhoa))
-                traCuu.add(s);
-        }if (traCuu.size() == 0)
-            System.out.println("Không tìm thấy sảnh " + tuKhoa);
-        return traCuu;
     }
 
     public List<SanhCuoi> getDs() {

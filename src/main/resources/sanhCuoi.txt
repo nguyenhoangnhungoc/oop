@@ -1,6 +1,3 @@
-Sảnh trệt thường 1
-Trệt Khu A
-500
 Sảnh trệt thường 2
 Trệt Khu A
 500
@@ -28,6 +25,3 @@ Tầng 2 Khu A
 Sảnh private 2
 Tầng 2 Khu A
 300
-Sảnh private 3
-Tầng 2 Khu A
-500
