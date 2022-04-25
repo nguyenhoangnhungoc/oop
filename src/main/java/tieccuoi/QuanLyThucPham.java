@@ -16,8 +16,8 @@ public class QuanLyThucPham {
         this.getDs().add(tp);
     }
 
-    public void xuatThucPham() {
-        this.getDs().forEach(tp -> tp.xuatTp());
+    public void xuatThucPham(List<ThucPham> thucPhams) {
+        thucPhams.forEach(tp -> tp.xuatTp());
     }
 
     public void docDsThucAn() throws FileNotFoundException {

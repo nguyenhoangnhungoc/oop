@@ -1,6 +1,8 @@
 package tieccuoi;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -27,8 +29,12 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 //        Main main = new Main();
 //        main.quanLiSanh();
-        QuanLySanhCuoi qlS = new QuanLySanhCuoi();
-        qlS.docDsSanh();
-        qlS.traCuuSanh();
+        List<ThucPham> thucPhams = new ArrayList<>();
+        QuanLyThucPham quanLyThucPham = new QuanLyThucPham();
+        quanLyThucPham.docDsThucAn();
+        quanLyThucPham.docDsThucUong();
+        thucPhams = quanLyThucPham.timKiem("Mỳ ý");
+//        quanLyThucPham.xuatThucPham(thucPhams);
+        quanLyThucPham.xuatThucPham(quanLyThucPham.getDs());
     }
 }
