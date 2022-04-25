@@ -1,9 +1,10 @@
 package tieccuoi;
 
 public enum ThoiGianThue {
-    MOT_GIO,
-    HAI_GIO,
-    NAM_GIO,
-    TAM_GIO,
-    MUOI_GIO
+    SANG_THUONG,
+    CHIEU_THUONG,
+    TOI_THUONG,
+    SANG_CUOI_TUAN,
+    CHIEU_CUOI_TUAN,
+    TOI_CUOI_TUAN
 }

@@ -18,6 +18,10 @@ public class DichVu {
         this.giaDv = giaDv;
     }
 
+    public DichVu(){
+
+    }
+
     public void xuatDv(){
         System.out.printf("Mã dịch vụ: %s\n", this.idDv);
         System.out.printf("Tên dịch vụ: %s\n", this.tenDv);
@@ -25,9 +29,9 @@ public class DichVu {
     }
 
     public void nhapDv(){
-        System.out.println("Nhập tên thực phẩm: ");
+        System.out.println("Nhập tên dịch vụ: ");
         this.tenDv = s.nextLine();
-        System.out.println("Nhập giá thực phẩm: ");
+        System.out.println("Nhập giá dịch vụ: ");
         this.giaDv = s.nextLine();
     }
 

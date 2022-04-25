@@ -1,15 +1,13 @@
 package tieccuoi;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class QuanLySanhCuoi {
     private List<SanhCuoi> ds = new ArrayList<>();
+    final Scanner scanner = new Scanner(System.in);
 
     public void themSanhCuoi(SanhCuoi s) {
         this.ds.add(s);
@@ -35,7 +33,11 @@ public class QuanLySanhCuoi {
         }
     }
 
-    public void xoaSanh(String tenSanhXoa) {
+    public void xoaSanh() {
+        String tenSanhXoa;
+
+        System.out.println("Nhập tên sảnh xoá: ");
+        tenSanhXoa = scanner.nextLine();
         for (SanhCuoi s : this.ds)
             if (s.getTenSanh().contains(tenSanhXoa) == true) {
                 this.ds.remove(s);
@@ -62,15 +64,32 @@ public class QuanLySanhCuoi {
         tempFile.renameTo(oldFile);
     }
 
-    public List<SanhCuoi> timKiem(String tuKhoa) {
+    public List<SanhCuoi> timKiem() {
         List<SanhCuoi> kq = new ArrayList<>();
+        String tuKhoa;
 
+        System.out.println("Nhập tên sảnh hoặc vị trí hoặc sức chứa: ");
+        tuKhoa = scanner.nextLine();
         for (SanhCuoi s : this.ds)
             if (s.getTenSanh().contains(tuKhoa) || s.getViTri().contains(tuKhoa) || String.valueOf(s.getSucChua()).contains(tuKhoa))
                 kq.add(s);
         if (kq.size() == 0)
             System.out.println("Không tìm thấy sảnh " + tuKhoa);
         return kq;
+    }
+
+    public List<SanhCuoi> traCuuSanh(){
+        List<SanhCuoi> traCuu = new ArrayList<>();
+        String tuKhoa = new String();
+
+        System.out.println("Nhâp tên sảnh hoặc vị trí hoặc sức chứa: ");
+        tuKhoa = scanner.nextLine();
+        for(SanhCuoi s : this.ds){
+            if(s.getTenSanh().contains(tuKhoa) || s.getViTri().contains(tuKhoa) || String.valueOf(s.getSucChua()).contains(tuKhoa))
+                traCuu.add(s);
+        }if (traCuu.size() == 0)
+            System.out.println("Không tìm thấy sảnh " + tuKhoa);
+        return traCuu;
     }
 
     public List<SanhCuoi> getDs() {

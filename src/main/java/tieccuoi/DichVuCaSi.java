@@ -2,9 +2,9 @@ package tieccuoi;
 
 public class DichVuCaSi extends DichVu{
     private String tenCaSi;
-    private SoBaiHat soBaiHat;
+    private int soBaiHat;
 
-    public DichVuCaSi(String tenDv, String giaDv, String tenCaSi, SoBaiHat soBaiHat) {
+    public DichVuCaSi(String tenDv, String giaDv, String tenCaSi, int soBaiHat) {
         super(tenDv, giaDv);
         this.tenCaSi = tenCaSi;
         this.soBaiHat = soBaiHat;
@@ -22,6 +22,8 @@ public class DichVuCaSi extends DichVu{
         super.nhapDv();
         System.out.println("Nhập tên ca sĩ: ");
         this.tenCaSi = s.nextLine();
+        System.out.println("Nhập số lượng bài hát yêu cầu: ");
+        this.soBaiHat = s.nextInt();
     }
 
     public String getTenCaSi() {
@@ -32,11 +34,11 @@ public class DichVuCaSi extends DichVu{
         this.tenCaSi = tenCaSi;
     }
 
-    public SoBaiHat getSoBaiHat() {
+    public int getSoBaiHat() {
         return soBaiHat;
     }
 
-    public void setSoBaiHat(SoBaiHat soBaiHat) {
+    public void setSoBaiHat(int soBaiHat) {
         this.soBaiHat = soBaiHat;
     }
 }

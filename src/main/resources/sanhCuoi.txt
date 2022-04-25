@@ -1,33 +1,33 @@
-Sanh tret thường 1
-Tret Khu A
+Sảnh trệt thường 1
+Trệt Khu A
 500
-Sanh tret thường 2
-Tret Khu A
+Sảnh trệt thường 2
+Trệt Khu A
 500
-Sanh tret thường 3
-Tret Khu A
+Sảnh trệt thường 3
+Trệt Khu A
 500
-Sanh tret VIP 1
-Tret Khu B
+Sảnh trệt VIP 1
+Trệt Khu B
 1000
-Sanh tret VIP 2
-Tret Khu B
+Sảnh trệt VIP 2
+Trệt Khu B
 1500
-Sanh tang deluxe 1
-Tang 1 Khu A
+Sảnh tầng deluxe 1
+Tầng 1 Khu A
 500
-Sanh tang deluxe 2
-Tang 1 Khu A
+Sảnh tầng deluxe 2
+Tầng 1 Khu A
 1000
-Sanh tang deluxe 3
-Tang 1 Khu B
+Sảnh tầng deluxe 3
+Tầng 1 Khu B
 1500
-Sanh private 1
-Tang 2 Khu A
+Sảnh private 1
+Tầng 2 Khu A
 100
-Sanh private 2
-Tang 2 Khu A
+Sảnh private 2
+Tầng 2 Khu A
 300
-Sanh private 3
-Tang 2 Khu A
+Sảnh private 3
+Tầng 2 Khu A
 500

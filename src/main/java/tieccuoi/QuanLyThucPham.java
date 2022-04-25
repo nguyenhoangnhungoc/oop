@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class QuanLyThucPham {
     private List<ThucPham> ds = new ArrayList<>();
+    private double donGiaMenu;
 
     public void themThucPham(ThucPham tp) {
         this.getDs().add(tp);

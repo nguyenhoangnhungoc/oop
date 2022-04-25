@@ -1,11 +1,15 @@
 package tieccuoi;
 
 public class DichVuKaraoke extends DichVu{
-    private ThoiGianThue thoiGianThue;
+    private int thoiGianThue;
 
-    public DichVuKaraoke(String tenDv, String giaDv, ThoiGianThue thoiGianThue) {
+    public DichVuKaraoke(String tenDv, String giaDv, int thoiGianThue) {
         super(tenDv, giaDv);
         this.thoiGianThue = thoiGianThue;
+    }
+
+    public DichVuKaraoke(){
+        super();
     }
 
     @Override
@@ -17,13 +21,15 @@ public class DichVuKaraoke extends DichVu{
     @Override
     public void nhapDv() {
         super.nhapDv();
+        System.out.println("Nhập thời gian thuê: ");
+        this.thoiGianThue = s.nextInt();
     }
 
-    public ThoiGianThue getThoiGianThue() {
+    public int getThoiGianThue() {
         return thoiGianThue;
     }
 
-    public void setThoiGianThue(ThoiGianThue thoiGianThue) {
+    public void setThoiGianThue(int thoiGianThue) {
         this.thoiGianThue = thoiGianThue;
     }
 }
