@@ -8,6 +8,9 @@ public class ThucAn extends ThucPham {
         this.isChay = chay;
     }
 
+    public ThucAn(){
+    }
+
     public void xuatTp() {
         super.xuatTp();
         System.out.printf("Món chay: %s\n", this.isChay);

@@ -8,6 +8,10 @@ public class ThucUong extends ThucPham{
         this.nhaSX = nhaSx;
     }
 
+    public ThucUong(){
+
+    }
+
     public void xuatTp(){
         super.xuatTp();
         System.out.printf("Nhà sản xuất: %s\n", this.nhaSX);

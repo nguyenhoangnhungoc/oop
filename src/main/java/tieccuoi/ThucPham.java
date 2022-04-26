@@ -19,6 +19,9 @@ public abstract class ThucPham {
         this.giaTp = giaTp;
     }
 
+    public ThucPham(){
+    }
+
     public void xuatTp(){
         System.out.printf("Mã Món: %s\n", this.idTp);
         System.out.printf("Tên Món: %s\n", this.tenTp);
