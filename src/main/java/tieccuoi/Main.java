@@ -139,7 +139,7 @@ public class Main {
                     qlTp.xuatThucPham(thucPhams);
                     break;
                 case 2:
-                    do{
+                    do {
                         System.out.println("===THÊM THỰC PHẨM===");
                         System.out.println("1. Thêm thức ăn");
                         System.out.println("2. Thêm thức uống");
@@ -147,7 +147,7 @@ public class Main {
                         System.out.printf("Bạn chọn: ");
                         selection = s.nextInt();
 
-                        switch (selection){
+                        switch (selection) {
                             case 1:
                                 ThucPham thucAn = new ThucAn();
                                 thucAn.nhapTp();
@@ -163,7 +163,7 @@ public class Main {
                                 qlTp.xuatThucPham(qlTp.getDs());
                                 break;
                         }
-                    }while (selection > 0 && selection < 3);
+                    } while (selection > 0 && selection < 3);
                     break;
                 case 3:
                     qlTp.xoaThucPham();
@@ -171,7 +171,7 @@ public class Main {
                     qlTp.xuatThucPham(qlTp.getDs());
                     break;
                 case 4:
-                    do{
+                    do {
                         System.out.println("===CẬP NHẬT THỰC PHẨM===");
                         System.out.println("1. Cập nhật danh sách thức ăn");
                         System.out.println("2. Cập nhật danh sách thức uống");
@@ -179,7 +179,7 @@ public class Main {
                         System.out.printf("Bạn chọn: ");
                         selection = s.nextInt();
 
-                        switch (selection){
+                        switch (selection) {
                             case 1:
                                 try {
                                     qlTp.capNhatThucAn();
@@ -197,12 +197,12 @@ public class Main {
                                 }
                                 break;
                         }
-                    }while (selection > 0 && selection < 3);
+                    } while (selection > 0 && selection < 3);
 
 
                     break;
                 case 5:
-                    do{
+                    do {
                         System.out.println("===XUẤT THỰC PHẨM===");
                         System.out.println("1. Xuất tất cả");
                         System.out.println("2. Xuất danh sách thức ăn");
@@ -211,24 +211,24 @@ public class Main {
                         System.out.printf("Bạn chọn: ");
                         selection = s.nextInt();
 
-                        switch (selection){
+                        switch (selection) {
                             case 1:
                                 qlTp.xuatThucPham(qlTp.getDs());
                                 break;
                             case 2:
-                                for(ThucPham tp : qlTp.getDs()) {
-                                    if(tp instanceof ThucAn)
+                                for (ThucPham tp : qlTp.getDs()) {
+                                    if (tp instanceof ThucAn)
                                         tp.xuatTp();
                                 }
                                 break;
                             case 3:
-                                for(ThucPham tp : qlTp.getDs()) {
-                                    if(tp instanceof ThucUong)
+                                for (ThucPham tp : qlTp.getDs()) {
+                                    if (tp instanceof ThucUong)
                                         tp.xuatTp();
                                 }
                                 break;
                         }
-                    }while (selection > 0 && selection < 4);
+                    } while (selection > 0 && selection < 4);
             }
         } while (selection < 6 && selection > 0);
 
@@ -246,7 +246,7 @@ public class Main {
             System.out.println("3. Quản lý thực phẩm");
             System.out.println("4. Thuê sảnh");
             System.out.println("5. Báo cáo doanh thu");
-            System.out.println("6. Trở về");
+            System.out.println("6. Thoát chương trình");
             System.out.printf("Bạn chọn: ");
             selection = s.nextInt();
 
@@ -260,7 +260,28 @@ public class Main {
                 case 3:
                     main.quanLiThucPham();
                     break;
+                case 4:
+                    break;
+                case 5:
+                    do {
+                        System.out.println("===BÁO CÁO DOANH THU===");
+                        System.out.println("1. Báo cáo doanh thu theo tháng");
+                        System.out.println("2. Báo cáo doanh thu theo quý");
+                        System.out.println("3. Trở về");
+                        System.out.printf("Bạn chọn: ");
+                        selection = s.nextInt();
+
+                        switch (selection) {
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                        }
+                    } while (selection > 0 && selection < 3);
+                    break;
+                default:
+                    System.out.println("Bạn chọn thoát khỏi chương trình!");
             }
-        } while (selection > 0 && selection < 9);
+        } while (selection > 0 && selection < 6);
     }
 }
