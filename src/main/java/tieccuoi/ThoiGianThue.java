@@ -1,10 +1,15 @@
 package tieccuoi;
 
 public enum ThoiGianThue {
-    SANG_THUONG,
-    CHIEU_THUONG,
-    TOI_THUONG,
-    SANG_CUOI_TUAN,
-    CHIEU_CUOI_TUAN,
-    TOI_CUOI_TUAN
+    ST("Sáng thường"),
+    CT("Chiều thường"),
+    TT("Tối thường"),
+    SCT("Sáng cuối tuần"),
+    CCT("Chiều cuối tuần"),
+    TCT("Tối cuối tuần");
+    public final String value;
+
+    ThoiGianThue(String s) {
+        this.value = s;
+    }
 }

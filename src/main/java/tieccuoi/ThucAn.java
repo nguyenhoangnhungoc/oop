@@ -1,10 +1,12 @@
 package tieccuoi;
 
 public class ThucAn extends ThucPham {
+    private static int dem = 0;
     private boolean isChay;
 
     public ThucAn(String tenF, String giaF, boolean chay) {
         super(tenF, giaF);
+        this.setIdTp("F" + String.format("%05d", ++dem));
         this.isChay = chay;
     }
 

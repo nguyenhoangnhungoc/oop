@@ -1,10 +1,12 @@
 package tieccuoi;
 
 public class ThucUong extends ThucPham{
+    private static int dem = 0;
     private String nhaSX;
 
     public ThucUong(String tenD, String giaD, String nhaSx){
         super(tenD, giaD);
+        this.setIdTp("D" + String.format("%05d", ++dem));
         this.nhaSX = nhaSx;
     }
 

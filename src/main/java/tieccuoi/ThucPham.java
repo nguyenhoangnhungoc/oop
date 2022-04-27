@@ -3,16 +3,10 @@ package tieccuoi;
 import java.util.Scanner;
 
 public abstract class ThucPham {
-    private static int dem = 0;
     private String idTp ;
     private String tenTp;
     private String giaTp;
     final Scanner s = new Scanner(System.in);
-
-
-    {
-        idTp = "F" + String.format("%05d", ++dem);
-    }
 
     public ThucPham(String tenTp, String giaTp){
         this.tenTp = tenTp;

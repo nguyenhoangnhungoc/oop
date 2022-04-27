@@ -12,8 +12,6 @@ public class Main {
 
     public void quanLiSanh() throws FileNotFoundException {
         do {
-//            System.out.print("\033[H\033[2J");
-//            System.out.flush();
             System.out.println("===QUẢN LÝ SẢNH CƯỚI===");
             System.out.println("1. Tra cứu sảnh");
             System.out.println("2. Thêm sảnh mới");
@@ -64,8 +62,6 @@ public class Main {
 
     public void quanLiDichVu() throws FileNotFoundException {
         do {
-//            System.out.print("\033[H\033[2J");
-//            System.out.flush();
             System.out.println("===QUẢN LÝ DỊCH VỤ===");
             System.out.println("1. Tra cứu dịch vụ");
             System.out.println("2. Thêm dịch vụ mới");
@@ -116,8 +112,6 @@ public class Main {
 
     public void quanLiThucPham() throws FileNotFoundException {
         do {
-//            System.out.print("\033[H\033[2J");
-//            System.out.flush();
             System.out.println("===QUẢN LÝ THỰC PHẨM===");
             System.out.println("1. Tra cứu thực phẩm");
             System.out.println("2. Thêm thực phẩm mới");
@@ -140,6 +134,7 @@ public class Main {
                     break;
                 case 2:
                     do {
+
                         System.out.println("===THÊM THỰC PHẨM===");
                         System.out.println("1. Thêm thức ăn");
                         System.out.println("2. Thêm thức uống");
@@ -261,6 +256,30 @@ public class Main {
                     main.quanLiThucPham();
                     break;
                 case 4:
+                    BuaTiec buaTiec = new BuaTiec();
+                    do {
+                        System.out.println("===THUÊ SẢNH===");
+                        System.out.println("1. Thuê sảnh mới");
+                        System.out.println("2. Xuất đơn giá bữa tiệc");
+                        System.out.println("3. Xuất hoá đơn");
+                        System.out.println("4. Trở về");
+                        System.out.printf("Bạn chọn: ");
+                        selection = s.nextInt();
+
+                        switch (selection) {
+                            case 1:
+                                buaTiec.nhapBuaTiec();
+                                break;
+                            case 2:
+                                buaTiec.tinhGiaTienSanh();
+                                double giaTien = buaTiec.tinhGiaTienSanh();
+                                System.out.println(String.format("%.2f", giaTien));
+                                break;
+                            case 3:
+                                buaTiec.xuatHoaDon();
+                                break;
+                        }
+                    } while (selection > 0 && selection < 4);
                     break;
                 case 5:
                     do {
