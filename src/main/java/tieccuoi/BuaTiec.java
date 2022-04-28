@@ -36,8 +36,13 @@ public class BuaTiec {
 
     }
 
+    @Override
+    public String toString() {
+        return this.sanhCuoi.getTenSanh();
+    }
+
     public void xuatBuaTiec(){
-        System.out.printf("Tên bữa tiệc: %s\n", this.getTenBuaTiec());
+        System.out.printf("Tên bữa tiệc: %s\n", this.tenBuaTiec);
         System.out.printf("Tên sảnh của bữa tiệc: %s\n", this.sanhCuoi.getTenSanh());
         System.out.printf("Thời điểm thuê: %s\n", this.thoiGianThue.value);
         System.out.printf("Ngày thuê: %s\n", this.ngayThue);
@@ -158,6 +163,7 @@ public class BuaTiec {
 
     public void xuatHoaDon() {
         System.out.println("==HOÁ ĐƠN==");
+        System.out.println("Tên bữa tiệc: " + this.tenBuaTiec);
         System.out.println("Sảnh bữa tiệc: " + this.sanhCuoi.getTenSanh());
         System.out.println("Thời điểm thuê bữa tiệc: " + this.thoiGianThue.value);
         System.out.println("Ngày thuê bữa tiệc: " + this.ngayThue);

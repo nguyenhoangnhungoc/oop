@@ -23,7 +23,7 @@ public class ThucAn extends ThucPham {
 
     public void nhapTp() {
         super.nhapTp();
-        System.out.printf("Có phải món chay khum?");
+        System.out.printf("Có phải món chay không?");
         this.isChay = s.hasNext();
     }
 

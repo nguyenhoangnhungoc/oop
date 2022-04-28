@@ -70,7 +70,8 @@ public class QuanLyDichVu {
         System.out.println("Nhập tên dịch vụ xoá: ");
         tenDichVuXoa = scanner.nextLine();
         Boolean isDeleted = false;
-        for (DichVu dv : this.ds) {
+        for ( int i = 0;i < this.ds.size(); i ++ ) {
+            DichVu dv = this.ds.get(i);
             if (dv.getTenDv().contains(tenDichVuXoa) == true) {
                 this.ds.remove(dv);
                 System.out.println("Xóa thành công!");

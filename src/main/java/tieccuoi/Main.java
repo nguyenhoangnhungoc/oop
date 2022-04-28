@@ -259,6 +259,8 @@ public class Main {
                 case 4:
                     BuaTiec buaTiec = new BuaTiec();
                     QuanLyBuaTiec quanLyBuaTiec = new QuanLyBuaTiec();
+                    quanLyBuaTiec.docDsBuaTiec();
+                    boolean flag = false;
                     do {
                         System.out.println("===THUÊ SẢNH===");
                         System.out.println("1. Thuê sảnh mới");
@@ -268,22 +270,30 @@ public class Main {
                         System.out.println("5. Xuất danh sách các bữa tiệc đã thuê");
                         System.out.println("6. Tra cứu bữa tiệc");
                         System.out.println("7. Xoá bữa tiệc");
-                        System.out.println("7. Cập nhật danh sách bữa tiệc");
-                        System.out.println("8. Trở về");
+                        System.out.println("8. Cập nhật danh sách bữa tiệc");
+                        System.out.println("9. Lịch sử thuê sảnh");
+                        System.out.println("10. Trở về");
                         System.out.printf("Bạn chọn: ");
                         selection = s.nextInt();
 
                         switch (selection) {
                             case 1:
                                 buaTiec.nhapBuaTiec();
+                                flag = true;
                                 break;
                             case 2:
-                                buaTiec.tinhGiaTienSanh();
-                                double giaTien = buaTiec.tinhGiaTienSanh();
-                                System.out.println(String.format("%.2f", giaTien));
+                                if (flag) {
+                                    buaTiec.tinhGiaTienSanh();
+                                    double giaTien = buaTiec.tinhGiaTienSanh();
+                                    System.out.println(String.format("%.2f", giaTien));
+                                } else
+                                    System.out.println("Vui lòng nhập bữa tiệc");
                                 break;
                             case 3:
-                                buaTiec.xuatHoaDon();
+                                if (flag) {
+                                    buaTiec.xuatHoaDon();
+                                } else
+                                    System.out.println("Vui lòng nhập bữa tiệc");
                                 break;
                             case 4:
                                 quanLyBuaTiec.themBuaTiec(buaTiec);
@@ -294,7 +304,9 @@ public class Main {
                                 quanLyBuaTiec.xuatBuaTiec(quanLyBuaTiec.getDs());
                                 break;
                             case 6:
-                                quanLyBuaTiec.timKiem();
+                                List<BuaTiec> buaTiecs;
+                                buaTiecs = quanLyBuaTiec.timKiem();
+                                quanLyBuaTiec.xuatBuaTiec(buaTiecs);
                                 break;
                             case 7:
                                 quanLyBuaTiec.xoaBuaTiec();
@@ -309,29 +321,47 @@ public class Main {
                                     throw new RuntimeException(e);
                                 }
                                 break;
-                        }
-                    } while (selection > 0 && selection < 8);
-                    break;
-                case 5:
-                    do {
-                        System.out.println("===BÁO CÁO DOANH THU===");
-                        System.out.println("1. Báo cáo doanh thu theo tháng");
-                        System.out.println("2. Báo cáo doanh thu theo quý");
-                        System.out.println("3. Trở về");
-                        System.out.printf("Bạn chọn: ");
-                        selection = s.nextInt();
+                            case 9:
+                                do {
+                                    System.out.println("===LỊCH SỬ THUÊ SẢNH===");
+                                    System.out.println("1. Xuất sảnh theo tần số thuê giảm dần");
+                                    System.out.println("2. Tra cứu lịch sử thuê theo năm");
+                                    System.out.println("3. Trở về");
+                                    System.out.printf("Bạn chọn: ");
+                                    selection = s.nextInt();
 
-                        switch (selection) {
-                            case 1:
-                                break;
-                            case 2:
+                                    switch (selection) {
+                                        case 1:
+                                            quanLyBuaTiec.xuatSoLanSuDung();
+                                            break;
+                                        case 2:
+                                            quanLyBuaTiec.traCuuSanhTheoNam();
+                                            break;
+                                    }
+                                } while (selection > 0 && selection < 3);
                                 break;
                         }
-                    } while (selection > 0 && selection < 3);
-                    break;
-                default:
-                    System.out.println("Bạn chọn thoát khỏi chương trình!");
-            }
-        } while (selection > 0 && selection < 6);
+                    } while (selection > 0 && selection < 10);
+                        case 5:
+                            do {
+                                System.out.println("===BÁO CÁO DOANH THU===");
+                                System.out.println("1. Báo cáo doanh thu theo tháng");
+                                System.out.println("2. Báo cáo doanh thu theo quý");
+                                System.out.println("3. Trở về");
+                                System.out.printf("Bạn chọn: ");
+                                selection = s.nextInt();
+
+                                switch (selection) {
+                                    case 1:
+                                        break;
+                                    case 2:
+                                        break;
+                                }
+                            } while (selection > 0 && selection < 3);
+                            break;
+                        default:
+                            System.out.println("Bạn chọn thoát khỏi chương trình!");
+                    }
+            } while (selection > 0 && selection < 6) ;
+        }
     }
-}

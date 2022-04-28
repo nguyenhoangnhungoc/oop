@@ -57,10 +57,11 @@ public class QuanLyThucPham {
     public void xoaThucPham() {
         String tenThucPham;
 
-        System.out.println("Nhập tên sảnh xoá: ");
+        System.out.println("Nhập tên thực phẩm xoá: ");
         tenThucPham = scanner.nextLine();
         Boolean isDeleted = false;
-        for (ThucPham tp : this.ds) {
+        for ( int i = 0; i < this.ds.size(); i++ ) {
+            ThucPham tp = this.ds.get(i);
             if (tp.getTenTp().contains(tenThucPham) == true) {
                 this.ds.remove(tp);
                 System.out.println("Xóa thành công!");
@@ -111,10 +112,10 @@ public class QuanLyThucPham {
         tempFile2.getParentFile().mkdirs();
         FileWriter writer = new FileWriter(tempFile2);
         for (ThucPham tp : this.ds) {
-            if( tp instanceof ThucAn) {
+            if( tp instanceof ThucUong) {
                 writer.write(tp.getTenTp() + "\n");
                 writer.write(tp.getGiaTp() + "\n");
-                writer.write(((ThucAn) tp).isChay()+"\n");
+                writer.write(((ThucUong) tp).getNhaSX()+"\n");
             }
         }
         writer.close();

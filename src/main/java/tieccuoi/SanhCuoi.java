@@ -10,11 +10,8 @@ public class SanhCuoi{
     private int sucChua;
     final Scanner s = new Scanner(System.in);
 
-    {
-        idSanh = "S" + String.format("%05d", ++dem);
-    }
-
     public SanhCuoi(String tenS, String vt, int nguoiChua){
+        this.idSanh = "S" + String.format("%05d", ++dem);
         this.tenSanh = tenS;
         this.viTri = vt;
         this.sucChua = nguoiChua;

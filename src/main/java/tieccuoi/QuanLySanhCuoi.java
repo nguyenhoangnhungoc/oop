@@ -39,8 +39,9 @@ public class QuanLySanhCuoi {
         System.out.println("Nhập tên sảnh xoá: ");
         tenSanhXoa = scanner.nextLine();
         Boolean isDeleted = false;
-        for (SanhCuoi s : this.ds) {
-            if (s.getTenSanh().contains(tenSanhXoa) == true) {
+        for ( int i = 0;i < this.ds.size(); i ++ ) {
+            SanhCuoi s = this.ds.get(i);
+            if (s.getTenSanh().contains(tenSanhXoa)) {
                 this.ds.remove(s);
                 System.out.println("Xóa thành công!");
                 isDeleted = true;
