@@ -54,31 +54,31 @@ public class QuanLyDichVu {
         List<DichVu> kq = new ArrayList<>();
         String tuKhoa;
 
-        System.out.println("Nhập tên sảnh hoặc vị trí hoặc sức chứa: ");
+        System.out.println("Nhập tên dịch vụ: ");
         tuKhoa = scanner.nextLine();
         for (DichVu dv : this.ds)
             if (dv.getTenDv().contains(tuKhoa))
                 kq.add(dv);
         if (kq.size() == 0)
-            System.out.println("Không tìm thấy sảnh " + tuKhoa);
+            System.out.println("Không tìm thấy dịch vụ " + tuKhoa);
         return kq;
     }
 
-    public void xoaSanh() {
-        String tenSanhXoa;
+    public void xoaDichVu() {
+        String tenDichVuXoa;
 
         System.out.println("Nhập tên dịch vụ xoá: ");
-        tenSanhXoa = scanner.nextLine();
+        tenDichVuXoa = scanner.nextLine();
         Boolean isDeleted = false;
         for (DichVu dv : this.ds) {
-            if (dv.getTenDv().contains(tenSanhXoa) == true) {
+            if (dv.getTenDv().contains(tenDichVuXoa) == true) {
                 this.ds.remove(dv);
                 System.out.println("Xóa thành công!");
                 isDeleted = true;
             }
         }
         if (!isDeleted)
-            System.out.printf("Không tìm thấy dịch vụ %s để xóa\n", tenSanhXoa);
+            System.out.printf("Không tìm thấy dịch vụ %s để xóa\n", tenDichVuXoa);
     }
 
     public List<DichVu> getDs() {

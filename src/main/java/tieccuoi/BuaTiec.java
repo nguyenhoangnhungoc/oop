@@ -1,32 +1,55 @@
 package tieccuoi;
 
 import java.io.FileNotFoundException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class BuaTiec {
     private String tenBuaTiec;
     private SanhCuoi sanhCuoi;
     private ThoiGianThue thoiGianThue;
+    private Date ngayThue;
+    public static final SimpleDateFormat F = new SimpleDateFormat("dd/MM/yyyy");
     private List<ThucPham> thucPhams = new ArrayList<>();
     private List<DichVu> dichVus = new ArrayList<>();
     final Scanner s = new Scanner(System.in);
 
 
-    public BuaTiec(String tenBuaTiec, SanhCuoi sanhCuoi, ThoiGianThue thoiGianThue, List<ThucPham> thucPhams, List<DichVu> dichVus) {
+    public BuaTiec(String tenBuaTiec, SanhCuoi sanhCuoi, ThoiGianThue thoiGianThue, Date ngayThue, List<ThucPham> thucPhams, List<DichVu> dichVus) {
         this.tenBuaTiec = tenBuaTiec;
         this.sanhCuoi = sanhCuoi;
+        this.setNgayThue(ngayThue);
         this.thoiGianThue = thoiGianThue;
         this.thucPhams = thucPhams;
         this.dichVus = dichVus;
+    }
+
+    public BuaTiec(String tenBuaTiec, SanhCuoi sanhCuoi, ThoiGianThue thoiGianThue, Date ngayThue) {
+        this.tenBuaTiec = tenBuaTiec;
+        this.sanhCuoi = sanhCuoi;
+        this.thoiGianThue = thoiGianThue;
+        this.ngayThue = ngayThue;
     }
 
     public BuaTiec() {
 
     }
 
-    public void nhapBuaTiec() throws FileNotFoundException {
+    public void xuatBuaTiec(){
+        System.out.printf("Tên bữa tiệc: %s\n", this.getTenBuaTiec());
+        System.out.printf("Tên sảnh của bữa tiệc: %s\n", this.sanhCuoi.getTenSanh());
+        System.out.printf("Thời điểm thuê: %s\n", this.thoiGianThue.value);
+        System.out.printf("Ngày thuê: %s\n", this.ngayThue);
+    }
+
+
+    public void nhapBuaTiec() throws FileNotFoundException, ParseException {
         System.out.printf("Nhập tên bữa tiệc: ");
         this.tenBuaTiec = s.nextLine();
+        System.out.printf("Nhập ngày thuê bữa tiệc: ");
+        this.ngayThue = F.parse(s.nextLine());
+
         QuanLySanhCuoi quanLySanhCuoi = new QuanLySanhCuoi();
         quanLySanhCuoi.docDsSanh();
         for (SanhCuoi ql : quanLySanhCuoi.getDs()) {
@@ -137,6 +160,7 @@ public class BuaTiec {
         System.out.println("==HOÁ ĐƠN==");
         System.out.println("Sảnh bữa tiệc: " + this.sanhCuoi.getTenSanh());
         System.out.println("Thời điểm thuê bữa tiệc: " + this.thoiGianThue.value);
+        System.out.println("Ngày thuê bữa tiệc: " + this.ngayThue);
         System.out.println("==DANH SÁCH THỰC PHẨM BẠN ĐÃ CHỌN==");
         for(ThucPham tp : this.thucPhams){
             System.out.println(tp.getTenTp());
@@ -151,6 +175,8 @@ public class BuaTiec {
         System.out.println(String.format("%.2f", this.tinhGiaTienSanh()));
 
     }
+
+
 
     public String getTenBuaTiec() {
         return tenBuaTiec;
@@ -190,5 +216,13 @@ public class BuaTiec {
 
     public void setDichVus(List<DichVu> dichVus) {
         this.dichVus = dichVus;
+    }
+
+    public Date getNgayThue() {
+        return ngayThue;
+    }
+
+    public void setNgayThue(Date ngayThue) {
+        this.ngayThue = ngayThue;
     }
 }

@@ -3,6 +3,7 @@ package tieccuoi;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.attribute.UserPrincipalLookupService;
+import java.text.ParseException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -89,7 +90,7 @@ public class Main {
                     qlDv.xuatDichVu(qlDv.getDs());
                     break;
                 case 3:
-                    qlDv.xoaSanh();
+                    qlDv.xoaDichVu();
                     System.out.println("==DANH SÁCH DỊCH VỤ SAU KHI XÓA==");
                     qlDv.xuatDichVu(qlDv.getDs());
                     break;
@@ -229,7 +230,7 @@ public class Main {
 
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, ParseException {
         Main main = new Main();
         int selection = 0;
         Scanner s = new Scanner(System.in);
@@ -257,12 +258,18 @@ public class Main {
                     break;
                 case 4:
                     BuaTiec buaTiec = new BuaTiec();
+                    QuanLyBuaTiec quanLyBuaTiec = new QuanLyBuaTiec();
                     do {
                         System.out.println("===THUÊ SẢNH===");
                         System.out.println("1. Thuê sảnh mới");
                         System.out.println("2. Xuất đơn giá bữa tiệc");
                         System.out.println("3. Xuất hoá đơn");
-                        System.out.println("4. Trở về");
+                        System.out.println("4. Cập nhật bữa tiệc vào danh sách");
+                        System.out.println("5. Xuất danh sách các bữa tiệc đã thuê");
+                        System.out.println("6. Tra cứu bữa tiệc");
+                        System.out.println("7. Xoá bữa tiệc");
+                        System.out.println("7. Cập nhật danh sách bữa tiệc");
+                        System.out.println("8. Trở về");
                         System.out.printf("Bạn chọn: ");
                         selection = s.nextInt();
 
@@ -278,8 +285,32 @@ public class Main {
                             case 3:
                                 buaTiec.xuatHoaDon();
                                 break;
+                            case 4:
+                                quanLyBuaTiec.themBuaTiec(buaTiec);
+                                System.out.println("==DANH SÁCH BỮA TIỆC SAU KHI THÊM==");
+                                quanLyBuaTiec.xuatBuaTiec(quanLyBuaTiec.getDs());
+                                break;
+                            case 5:
+                                quanLyBuaTiec.xuatBuaTiec(quanLyBuaTiec.getDs());
+                                break;
+                            case 6:
+                                quanLyBuaTiec.timKiem();
+                                break;
+                            case 7:
+                                quanLyBuaTiec.xoaBuaTiec();
+                                System.out.println("==DANH SÁCH BỮA TIỆC SAU KHI XOÁ==");
+                                quanLyBuaTiec.xuatBuaTiec(quanLyBuaTiec.getDs());
+                                break;
+                            case 8:
+                                try {
+                                    quanLyBuaTiec.capNhat();
+                                    System.out.println("Cập nhật thành công!");
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
+                                break;
                         }
-                    } while (selection > 0 && selection < 4);
+                    } while (selection > 0 && selection < 8);
                     break;
                 case 5:
                     do {
